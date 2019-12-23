@@ -1,0 +1,18 @@
+App\Entity\User:
+  user_bob:
+    name: 'Sponge'
+    firstName: 'Bob'
+    email: 'spongebob@mail.com'
+    plainPassword: '123'
+  user{1..20}:
+    name: <lastName()>
+    firstName: <firstName()>
+    email: <email()>
+    plainPassword: '123'
+
+App\Entity\Post:
+  post{1..500}:
+    title: <sentence(6, true)>
+    postContent: <paragraphs(3, true)>
+    creatdAt: <dateTimeThisYear('now')>
+    author: '@user*'
